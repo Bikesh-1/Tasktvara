@@ -27,7 +27,7 @@ function IntigeationLogo() {
   }, []);
 
   return (
-    <div className="relative z-20 w-screen bg-white h-[80vh] min-h-[80vh] sm:min-h-[100vh] lg:min-h-[120vh] flex flex-col">
+    <div className="relative z-20 w-screen bg-white h-[60vh] min-h-[80vh] sm:min-h-[100vh] lg:min-h-[120vh] flex flex-col">
       <div>
         <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl text-[#AEAEAE] font-bold p-4 sm:p-8 leading-tight">
           Tvara integrates seemlesly <br /> into your existing workflows
