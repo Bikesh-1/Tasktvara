@@ -5,7 +5,7 @@ function WorkFlow() {
     return (
         <div className="flex relative z-10 flex-col gap-4 justify-center items-center w-screen min-h-[130vh] bg-white">
             <ReactLenis root />
-            <div className="flex flex-col-reverse gap-8 justify-around items-center px-2 w-full sm:w-[70vw] md:flex-row md:gap-14 md:px-8">
+            <div className="flex flex-col-reverse gap-8 justify-between  items-center px-2 w-full sm:w-[90vw] md:flex-row md:gap-18 md:px-8">
                 <div className="flex flex-col items-center w-full md:w-auto md:items-start">
                     <p className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl text-[#AEAEAE] text-justify p-2 mb-4 md:mb-8">
                         At Tvara, reliability is built into every <br className="hidden xs:inline" />
