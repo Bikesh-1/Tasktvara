@@ -51,7 +51,6 @@ function SecondPage() {
       <div className="flex flex-col md:flex-row justify-between items-center mt-8 w-full max-w-7xl px-2 sm:px-6 md:px-0 gap-4">
         <h2 className="text-2xl md:text-3xl text-[#aeaeae] mb-4 md:mb-0">Recognized by</h2>
         <div className="flex relative justify-end w-full md:w-[68vw] max-w-full">
-          {/* Fade left */}
           <div
             className="absolute top-0 left-0 z-10 w-20 sm:w-28 md:w-40 h-full pointer-events-none"
             style={{
@@ -85,7 +84,6 @@ function SecondPage() {
         key={card.id}
         className="relative min-w-full h-[13.62rem] rounded-2xl overflow-hidden transition-all duration-300 group"
       >
-        {/* Background Layers */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 backdrop-blur-lg backdrop-saturate-150 transition-all duration-700 bg-white/10" />
           <div
@@ -93,8 +91,6 @@ function SecondPage() {
             style={{ transitionProperty: "transform" }}
           />
         </div>
-
-        {/* Card Content */}
         <div className="flex relative z-10 w-full h-full items-center gap-4 p-4 md:p-0 md:flex-row flex-col md:justify-start justify-center">
           <img
             className="md:w-[21rem] w-24 sm:w-28 object-contain rounded-xl sm:rounded-none"

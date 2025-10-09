@@ -4,8 +4,6 @@ import { ReactLenis, useLenis } from 'lenis/react'
 
 function OurProduct() {
     const lenis = useLenis((lenis) => {
-        // Remove console.log in production
-        // console.log(lenis)
     })
     return (
         <div className="relative z-20 w-screen min-h-[60vh] h-[70vh] xs:h-[85vh] sm:h-[95vh] md:h-[100vh] overflow-hidden">
@@ -18,7 +16,6 @@ function OurProduct() {
                 muted
                 playsInline
             />
-            {/* Title Section */}
             <div
                 className="
                     absolute z-20
@@ -55,7 +52,6 @@ function OurProduct() {
                     >cutting edge sales agent</span>
                 </span>
             </div>
-            {/* Subtitle Section */}
             <div
                 className="
                     absolute z-20

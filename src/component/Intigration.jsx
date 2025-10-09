@@ -5,7 +5,7 @@ function Intigration() {
     <div className="relative p-2 w-screen h-auto bg-white xs:p-4 sm:p-8 sm:h-[100vh]">
       <div className="flex flex-col gap-6 justify-center items-start w-full h-full sm:gap-8">
         <div className="w-full">
-          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-[#AEAEAE] leading-tight sm:text-5xl">
+          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-[#AEAEAE] leading-tight ">
             Tvara integrates seemlesly <br /> into your existing workflows
           </h1>
         </div>
@@ -13,7 +13,7 @@ function Intigration() {
           <div
             className="flex flex-col gap-4 justify-center items-stretch w-full max-w-7xl xs:flex-row sm:gap-8 sm:flex-row"
           >
-            {/* Card 1 */}
+
             <div
               className="
                 w-full xs:w-[14rem] sm:w-[18rem]
@@ -44,7 +44,6 @@ function Intigration() {
                 rounded-2xl relative text-white overflow-hidden bg-black flex flex-col justify-end mx-auto
               "
             >
-              {/* Grid background */}
               <div
                 className="absolute inset-0 z-0"
                 style={{
@@ -61,13 +60,11 @@ function Intigration() {
                 className="object-contain absolute inset-0 z-10 w-full h-full pointer-events-none"
                 draggable={false}
               />
-              {/* Text overlay */}
               <div className="flex relative z-20 flex-col items-start px-4 pb-4 sm:px-6 sm:pb-8">
                 <span className="text-3xl font-bold leading-none text-white xs:text-4xl sm:text-5xl">100k+</span>
                 <span className="text-lg xs:text-xl sm:text-2xl font-semibold text-[#AEAEAE] mt-1">Executions</span>
               </div>
             </div>
-            {/* Card 3 */}
             <div
               className="
                 h-[13rem] xs:h-[16rem] sm:h-[20rem]
@@ -92,7 +89,6 @@ function Intigration() {
                 </span>
               </div>
             </div>
-            {/* Card 4 */}
             <div
               className="
                 h-[10rem] xs:h-[12rem] sm:h-[15rem]

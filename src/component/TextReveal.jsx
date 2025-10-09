@@ -51,10 +51,9 @@ export const TextReveal = ({ children, className }) => {
     <div
       ref={containerRef}
       className={cn(
-        // Responsive styles using Tailwind
         "relative mx-auto max-w-4xl font-medium leading-snug text-justify text-white/30",
-        "text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl", // responsive font sizing
-        "px-2 sm:px-4 md:px-0", // padding for mobile
+        "text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl",
+        "px-2 sm:px-4 md:px-0", 
         className
       )}
     >
@@ -63,7 +62,7 @@ export const TextReveal = ({ children, className }) => {
           key={i}
           className={cn(
             "inline-block word",
-            "mx-0.5 sm:mx-1" // responsive spacing between words
+            "mx-0.5 sm:mx-1"
           )}
         >
           {word}

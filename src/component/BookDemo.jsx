@@ -91,7 +91,6 @@ function BookDemo() {
         loop
         muted
         playsInline
-        // Responsive fallback poster for mobile
         poster="https://images.pexels.com/videos/7670836/free-video-7670836.jpg"
       />
       <div className="absolute inset-0 z-10 bg-black/40" />

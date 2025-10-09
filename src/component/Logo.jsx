@@ -15,7 +15,6 @@ const imageLogos = [
 ];
 
 function Logo() {
-  // Duplicate the logos to create a seamless loop
   const logosToShow = [...imageLogos, ...imageLogos];
 
   return (

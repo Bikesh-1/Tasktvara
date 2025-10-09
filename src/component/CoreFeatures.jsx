@@ -1,76 +1,122 @@
-import React, { useState } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
+import { gsap } from 'gsap';
+import MoveableCard from './MoveableCard';
 
-const features = [
+const FEATURES = [
+  {
+    title: "Sales Agent Automation",
+    description:
+      "Automate prospecting, engagement, and follow-ups with an AI sales agent that never sleeps. Eliminate manual work and maximize your team's closing power."
+  },
   {
     title: "Persona Matcher",
-    desc: "Automate prospecting, engagement, and follow-ups with a sales agent that never sleeps. Reduce manual effort and focus on closing more deals.",
+    description:
+      "Instantly match outreach messages to ideal customer personas with advanced AI analysis across industries. Connect smarter, boost response rates, and unlock new opportunities."
   },
   {
-    title: "Smart Insights",
-    desc: "Gain actionable analytics and recommendations tailored to your workflow, helping you make data-driven decisions faster.",
+    title: "Effortless Integration",
+    description:
+      "Plug into your workflow—seamless integrations with CRM, email, chat, and more. Gain actionable insights on every lead, right inside your existing tools."
   },
   {
-    title: "Workflow Automation",
-    desc: "Streamline repetitive tasks and integrate your favorite tools for seamless, end-to-end automation.",
-  },
-  {
-    title: "Continuous Learning",
-    desc: "Your AI agent evolves with your business, learning from every interaction to deliver smarter results over time.",
-  },
+    title: "Continuous Improvement",
+    description:
+      "Your agent learns over time: every interaction improves results. Drive higher conversions and shrink sales cycles, automatically."
+  }
 ];
 
 function CoreFeatures() {
   const [current, setCurrent] = useState(0);
+  const descRef = useRef();
+  const titleRef = useRef();
+  const intervalRef = useRef();
 
-  const handleDotClick = (idx) => setCurrent(idx);
+  useEffect(() => {
+    intervalRef.current = setInterval(() => {
+      setCurrent(prev => (prev + 1) % FEATURES.length);
+    }, 3500);
+    return () => clearInterval(intervalRef.current);
+  }, []);
 
   return (
-    <div className="w-full min-h-[100vh] bg-black text-white flex flex-col items-start justify-center px-16 py-20 relative overflow-x-hidden">
-      <h2 className="mb-10 text-5xl font-medium md:text-3xl">Our Core Features</h2>
-      <div className="flex flex-row gap-8 items-center w-full">
-        {/* Feature Card */}
-        <div className="relative bg-gradient-to-br from-[#232323]/80 to-[#232323]/60 rounded-xl shadow-lg p-7 w-[350px] min-h-[300px] flex flex-col justify-between">
-          <div>
-            <h3 className="mb-2 text-2xl font-semibold">{features[current].title}</h3>
-            <p className="text-sm text-[#e0e0e0]">{features[current].desc}</p>
-          </div>
-          {/* Dots */}
-          <div className="flex gap-2 items-center mt-6">
-            {features.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => handleDotClick(idx)}
-                aria-label={`Show feature ${idx + 1}`}
-                className={`w-6 h-2 rounded-full transition-all duration-200 ${
-                  idx === current
-                    ? "bg-[#e0e0e0] opacity-100"
-                    : "bg-[#e0e0e0]/40 opacity-60"
-                }`}
-                style={{
-                  border: 'none',
-                  outline: 'none',
-                  cursor: 'pointer',
-                }}
-              />
-            ))}
+    <div className='w-screen h-auto bg-black relative z-20 p-4'>
+      <div>
+        <h1 className='text-white sm:text-4xl p-10 text-xl'>Our Core Features</h1>
+      </div>
+      <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-0">
+        <div
+          className='w-80 h-72 sm:w-96 sm:h-80 rounded-2xl p-6 text-white shadow-xl relative flex flex-col justify-start items-center'
+          style={{
+            backgroundImage:
+              "url('https://ik.imagekit.io/lxvqyrkjo/41474b18664e4742ed9a20e13e71413d58fadd70.png?updatedAt=1759954458682')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backdropFilter: 'blur(1px)',
+          }}
+        >
+          <div className="flex flex-col items-center w-full">
+            <p
+              ref={titleRef}
+              className="text-xl md:text-2xl font-bold p-2 mb-1 text-white tracking-wide"
+              style={{
+                letterSpacing: "0.01em",
+                minHeight: "2.3em",
+                transition: "opacity 0.35s"
+              }}
+            >
+              {FEATURES[current].title}
+            </p>
+            <p
+              ref={descRef}
+              className="text-sm md:text-lg p-2 text-center"
+              style={{
+                minHeight: 82,
+                transition: "opacity 0.35s"
+              }}
+            >
+              {FEATURES[current].description}
+            </p>
+            <div className="flex items-center justify-center gap-3 mt-6">
+              {FEATURES.map((ftr, idx) => (
+                <span
+                  key={ftr.title}
+                  className={
+                    idx === current
+                      ? "block w-10 h-3 rounded-full bg-white transition-all duration-300"
+                      : "block w-3 h-3 rounded-full bg-[#B3B3B3] opacity-70 transition-all duration-300"
+                  }
+                  style={{
+                    transition: "all 0.32s cubic-bezier(0.45, 0, 0.55, 1)"
+                  }}
+                />
+              ))}
+            </div>
           </div>
         </div>
-        {/* Placeholder Cards */}
-        <div className="rounded-xl bg-gradient-to-br from-[#eaeaea] to-[#cfcfcf] opacity-80 w-[340px] min-h-[220px]" />
-        <div className="rounded-xl bg-gradient-to-br from-[#eaeaea] to-[#cfcfcf] opacity-60 w-[340px] min-h-[220px]" />
-        <div className="rounded-xl bg-gradient-to-br from-[#eaeaea] to-[#cfcfcf] opacity-80 w-[340px] min-h-[220px]" />
-        <div className="rounded-xl bg-gradient-to-br from-[#eaeaea] to-[#cfcfcf] opacity-60 w-[340px] min-h-[220px]" />
-        <div className="rounded-xl bg-gradient-to-br from-[#eaeaea] to-[#cfcfcf] opacity-80 w-[340px] min-h-[220px]" />
-        <div className="rounded-xl bg-gradient-to-br from-[#eaeaea] to-[#cfcfcf] opacity-60 w-[340px] min-h-[220px]" />
+        <div className='w-full md:w-2/3 mt-8 md:mt-0'>
+          <MoveableCard />
+        </div>
       </div>
-      {/* Explore all Products link */}
-      <a
-        href="#"
-        className="absolute right-16 bottom-10 text-[#bdbdbd] text-sm underline flex items-center gap-1 hover:text-white transition-colors"
-        style={{ letterSpacing: 0.1 }}
-      >
-        Explore all Products
-      </a>
+      <div className="font-medium text-[#AEAEAE] text-2xl underline text-end p-6 xs:p-12 sm:p-16 md:p-24 w-full">
+        <a href="#" className="block w-full text-end text-lg xs:text-xl sm:text-2xl">
+          Explore all Products
+        </a>
+      </div>
+      <div className="flex items-center justify-center flex-col gap-8 xs:gap-10 sm:gap-12 px-4 w-full">
+        <h1 className="font-bold text-[#AEAEAE] text-lg xs:text-xl sm:text-2xl text-center">
+          See Sales Agent in action
+        </h1>
+        <button
+          className="text-white px-4 xs:px-6 py-2 xs:py-3 font-bold text-base xs:text-lg shadow-lg transition-all duration-300 tet-2xl w-full xs:w-[70vw] sm:w-[40vw] max-w-xs sm:max-w-md rounded-2xl"
+          style={{
+            background: "linear-gradient(to right, #1D4F8F, #031B3B)",
+            border: "none"
+          }}
+        >
+          Book a Demo
+        </button>
+      </div>
     </div>
   );
 }
