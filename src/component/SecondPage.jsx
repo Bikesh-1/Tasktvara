@@ -1,13 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect, useRef } from 'react'
 import { TextReveal } from './TextReveal';
-// import LogoLoop from './Logo';
 import Logo from './Logo';
 
-
 function SecondPage() {
-
-
   const cards = [
     {
       id: 1,
@@ -32,7 +28,6 @@ function SecondPage() {
     }
   ];
 
-
   const [current, setCurrent] = useState(0);
   const intervalRef = useRef(null);
   const hoverRef = useRef(false);
@@ -44,21 +39,22 @@ function SecondPage() {
       }
     }, 3000);
     return () => clearInterval(intervalRef.current);
-  }, []);
+    // eslint-disable-next-line
+  }, [cards.length]);
 
   return (
-    <div className="relative z-10 w-screen h-[130vh] bg-black overflow-x-hidden text-white flex items-center justify-center flex-col">
-      <div className='relative z-20'>
+    <div className="relative z-10 w-screen sm:h-[120vh] h-auto bg-black overflow-x-hidden text-white flex items-center justify-center flex-col">
+      <div className='relative z-20 w-full px-2 sm:px-6 md:px-0'>
         <TextReveal>
          Tvara builds private AI agents that automate workflows, boost productivity, and continuously learn to deliver smarter results.
         </TextReveal>
       </div>
-      <div className="flex justify-between items-center mt-8 w-full max-w-7xl">
-        <h2 className="text-3xl text-[#aeaeae] ">Recognized by</h2>
-        <div className="flex relative justify-end w-[68vw]">
+      <div className="flex flex-col md:flex-row justify-between items-center mt-8 w-full max-w-7xl px-2 sm:px-6 md:px-0 gap-4">
+        <h2 className="text-2xl md:text-3xl text-[#aeaeae] mb-4 md:mb-0">Recognized by</h2>
+        <div className="flex relative justify-end w-full md:w-[68vw] max-w-full">
           {/* Fade left */}
           <div
-            className="absolute top-0 left-0 z-10 w-40 h-full pointer-events-none"
+            className="absolute top-0 left-0 z-10 w-20 sm:w-28 md:w-40 h-full pointer-events-none"
             style={{
               background: "linear-gradient(to right, #000 80%, transparent 100%)"
             }}
@@ -66,7 +62,7 @@ function SecondPage() {
           <Logo />
 
           <div
-            className="absolute top-0 right-0 z-10 w-40 h-full pointer-events-none"
+            className="absolute top-0 right-0 z-10 w-20 sm:w-28 md:w-40 h-full pointer-events-none"
             style={{
               background: "linear-gradient(to left, #000 50%, transparent 100%)"
             }}
