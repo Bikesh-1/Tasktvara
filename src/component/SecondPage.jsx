@@ -72,7 +72,7 @@ function SecondPage() {
 
       
       <div
-  className="relative w-[20rem] sm:w-[90rem] h-[12rem] overflow-hidden rounded-2xl sm:mt-10 m-4 sm:m-0"
+  className="relative w-[20rem] sm:w-[90rem] sm:h-[12rem] h-auto overflow-hidden rounded-2xl sm:mt-10 m-4 sm:m-0"
   onMouseEnter={() => (hoverRef.current = true)}
   onMouseLeave={() => (hoverRef.current = false)}
 >
