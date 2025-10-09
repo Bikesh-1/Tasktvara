@@ -24,7 +24,6 @@ function BookDemo() {
       }
     });
 
-
     gsap.fromTo(
       h1Ref.current,
       { y: 60, opacity: 0 },
@@ -79,7 +78,7 @@ function BookDemo() {
   return (
     <div
       ref={sectionRef}
-      className="relative w-screen h-[100vh] flex items-center justify-center overflow-hidden"
+      className="flex overflow-hidden relative justify-center items-center w-full min-h-screen"
       style={{
         minHeight: "100vh",
       }}
@@ -92,20 +91,51 @@ function BookDemo() {
         loop
         muted
         playsInline
+        // Responsive fallback poster for mobile
+        poster="https://images.pexels.com/videos/7670836/free-video-7670836.jpg"
       />
       <div className="absolute inset-0 z-10 bg-black/40" />
-      <div className="flex relative z-20 flex-col justify-center items-center w-full">
+      <div className="flex relative z-20 flex-col justify-center items-center px-4 w-full sm:px-8">
         <h1
           ref={h1Ref}
-          className="mb-3 text-4xl font-bold text-center text-white opacity-0 md:text-5xl"
+          className="
+            mb-2
+            text-2xl
+            font-bold
+            text-center
+            text-white
+            opacity-0
+            xs:text-3xl
+            sm:text-4xl
+            md:text-5xl
+            lg:text-6xl
+            leading-tight
+            max-w-[90vw]
+            sm:max-w-2xl
+          "
         >
           See the agents in action!
         </h1>
         <p
           ref={pRef}
-          className="mb-8 text-lg font-normal text-center text-white opacity-0 md:text-2xl"
+          className="
+            mb-6
+            text-base
+            font-normal
+            text-center
+            text-white
+            opacity-0
+            xs:text-lg
+            sm:text-xl
+            md:text-2xl
+            lg:text-3xl
+            max-w-[90vw]
+            sm:max-w-2xl
+          "
         >
-          Book a Demo and See<br className="hidden md:block" /> the agents in action!
+          Book a Demo and See
+          <br className="hidden md:block" />
+          the agents in action!
         </p>
         <button
           ref={btnRef}
