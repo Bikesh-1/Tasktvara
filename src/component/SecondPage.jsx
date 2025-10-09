@@ -39,7 +39,6 @@ function SecondPage() {
       }
     }, 3000);
     return () => clearInterval(intervalRef.current);
-    // eslint-disable-next-line
   }, [cards.length]);
 
   return (
@@ -69,53 +68,64 @@ function SecondPage() {
           />
         </div>
       </div>
+
+
+      
       <div
-        className="relative w-[90rem] h-[12rem] overflow-hidden rounded-2xl mt-10"
-        onMouseEnter={() => (hoverRef.current = true)}
-        onMouseLeave={() => (hoverRef.current = false)}
+  className="relative w-[20rem] sm:w-[90rem] h-[12rem] overflow-hidden rounded-2xl sm:mt-10 m-4 sm:m-0"
+  onMouseEnter={() => (hoverRef.current = true)}
+  onMouseLeave={() => (hoverRef.current = false)}
+>
+  <div
+    className="flex transition-transform duration-700 ease-in-out"
+    style={{ transform: `translateX(-${current * 100}%)` }}
+  >
+    {cards.map((card) => (
+      <div
+        key={card.id}
+        className="relative min-w-full h-[13.62rem] rounded-2xl overflow-hidden transition-all duration-300 group"
       >
-        <div
-          className="flex transition-transform duration-700 ease-in-out"
-          style={{ transform: `translateX(-${current * 100}%)` }}
-        >
-          {cards.map((card) => (
-            <div
-              key={card.id}
-              className="relative min-w-full h-[13.62rem] rounded-2xl overflow-hidden transition-all duration-300 group"
+        {/* Background Layers */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 backdrop-blur-lg backdrop-saturate-150 transition-all duration-700 bg-white/10" />
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-[#505849]/100 to-[#111b20]/60 rounded-2xl transition-all duration-300 origin-left scale-x-0 group-hover:scale-x-100"
+            style={{ transitionProperty: "transform" }}
+          />
+        </div>
+
+        {/* Card Content */}
+        <div className="flex relative z-10 w-full h-full items-center gap-4 p-4 md:p-0 md:flex-row flex-col md:justify-start justify-center">
+          <img
+            className="md:w-[21rem] w-24 sm:w-28 object-contain rounded-xl sm:rounded-none"
+            src={card.img}
+            alt={card.title}
+          />
+          <div className="flex flex-col gap-2 text-center md:text-left md:ml-10">
+            <h2 className="font-medium sm:font-bold text-sm sm:text-xl md:text-4xl text-white">
+              {card.title}
+            </h2>
+            <p className="text-[#d2d2d2] text-sm sm:text-base md:text-xl">
+              {card.desc}
+            </p>
+            <a
+              href={card.link}
+              className="text-[#AEAEAE] underline text-sm md:text-lg"
             >
-              <div className="absolute inset-0 z-0">
-                <div className="absolute inset-0 backdrop-blur-lg backdrop-saturate-150 transition-all duration-700 bg-white/10" />
-                <div
-                  className="absolute inset-0 bg-gradient-to-r from-[#505849]/100 to-[#111b20]/60 rounded-2xl transition-all duration-300 origin-left scale-x-0 group-hover:scale-x-100"
-                  style={{ transitionProperty: "transform" }}
-                />
-              </div>
-              <div className="flex relative z-10 flex-row items-center w-full h-full">
-                <img
-                  className="w-[21rem] z-20 relative"
-                  src={card.img}
-                  alt=""
-                />
-                <div className="flex z-20 flex-col gap-3 ml-10 text-white">
-                  <h2 className="text-4xl">{card.title}</h2>
-                  <p className="text-xl text-[#d2d2d2]">{card.desc}</p>
-                  <a
-                    href={card.link}
-                    className="text-lg underline text-[#AEAEAE] "
-                  >
-                    Explore our blog
-                  </a>
-                </div>
-              </div>
-            </div>
-          ))}
+              Explore our blog
+            </a>
+          </div>
         </div>
       </div>
+    ))}
+  </div>
+</div>
+
       <div className="flex absolute bottom-10 left-1/2 z-30 gap-2 -translate-x-1/2">
         {cards.map((_, index) => (
           <div
             key={index}
-            className={`w-3 h-3 rounded-full transition-all ${
+            className={`sm:w-3 sm:h-3 rounded-full transition-all ${
               current === index ? "bg-white" : "bg-gray-500"
             }`}
           />
