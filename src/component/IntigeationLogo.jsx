@@ -27,7 +27,7 @@ function IntigeationLogo() {
   }, []);
 
   return (
-    <div className="relative z-20 w-screen bg-white h-[120vh] min-h-[80vh] sm:min-h-[100vh] lg:min-h-[120vh] flex flex-col">
+    <div className="relative z-20 w-screen bg-white h-[80vh] min-h-[80vh] sm:min-h-[100vh] lg:min-h-[120vh] flex flex-col">
       <div>
         <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl text-[#AEAEAE] font-bold p-4 sm:p-8 leading-tight">
           Tvara integrates seemlesly <br /> into your existing workflows
@@ -36,7 +36,7 @@ function IntigeationLogo() {
       <div className="flex justify-center items-center px-2 sm:px-0">
         <img
           ref={imgRef}
-          className="w-[95vw] xs:w-[85vw] sm:w-[70vw] md:w-[70vw] lg:w-[70vw] max-w-5xl h-auto"
+          className="w-[100vw] xs:w-[95vw] sm:w-[70vw] md:w-[70vw] lg:w-[70vw] max-w-5xl h-auto"
           src="https://ik.imagekit.io/lxvqyrkjo/Group%20369.png?updatedAt=1760016800309"
           alt=""
           style={{ transformOrigin: "center center" }}
