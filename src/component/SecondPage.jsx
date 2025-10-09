@@ -1,10 +1,12 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect, useRef } from 'react'
-import { ReactLenis, useLenis } from 'lenis/react'
+import { TextReveal } from './TextReveal';
+// import LogoLoop from './Logo';
+import Logo from './Logo';
+
 
 function SecondPage() {
-  const lenis = useLenis((lenis) => {
-    console.log(lenis)
-  })
+
 
   const cards = [
     {
@@ -30,6 +32,7 @@ function SecondPage() {
     }
   ];
 
+
   const [current, setCurrent] = useState(0);
   const intervalRef = useRef(null);
   const hoverRef = useRef(false);
@@ -43,21 +46,31 @@ function SecondPage() {
     return () => clearInterval(intervalRef.current);
   }, []);
 
-
   return (
-    <div className="relative z-10 w-screen h-[100vh] bg-black overflow-x-hidden text-white flex items-center justify-center flex-col">
-      <ReactLenis root />
-      <div>
-          <h1 className='text-[4rem] leading-none'>
-            Tvara builds private AI agents <br /> that automate workflows, boost <br /> productivity, and continuously <br /> learn to deliver smarter results.
-          </h1>
+    <div className="relative z-10 w-screen h-[130vh] bg-black overflow-x-hidden text-white flex items-center justify-center flex-col">
+      <div className='relative z-20'>
+        <TextReveal>
+         Tvara builds private AI agents that automate workflows, boost productivity, and continuously learn to deliver smarter results.
+        </TextReveal>
       </div>
-      <div>
-        <div>
-          <p className='text-[#AEAEAE] text-4xl'>Recognised by</p>
-        </div>
-        <div>
+      <div className="flex justify-between items-center mt-8 w-full max-w-7xl">
+        <h2 className="text-3xl text-[#aeaeae] ">Recognized by</h2>
+        <div className="flex relative justify-end w-[68vw]">
+          {/* Fade left */}
+          <div
+            className="absolute top-0 left-0 z-10 w-40 h-full pointer-events-none"
+            style={{
+              background: "linear-gradient(to right, #000 80%, transparent 100%)"
+            }}
+          />
+          <Logo />
 
+          <div
+            className="absolute top-0 right-0 z-10 w-40 h-full pointer-events-none"
+            style={{
+              background: "linear-gradient(to left, #000 50%, transparent 100%)"
+            }}
+          />
         </div>
       </div>
       <div
@@ -101,20 +114,18 @@ function SecondPage() {
             </div>
           ))}
         </div>
-
-        {/* Dots */}
-       
       </div>
       <div className="flex absolute bottom-10 left-1/2 z-30 gap-2 -translate-x-1/2">
-          {cards.map((_, index) => (
-            <div
-              key={index}
-              className={`w-3 h-3 rounded-full transition-all ${
-                current === index ? "bg-white" : "bg-gray-500"
-              }`}
-            />
-          ))}
-        </div>
+        {cards.map((_, index) => (
+          <div
+            key={index}
+            className={`w-3 h-3 rounded-full transition-all ${
+              current === index ? "bg-white" : "bg-gray-500"
+            }`}
+          />
+        ))}
+      </div>
+      
     </div>
   );
 }
