@@ -3,7 +3,7 @@ import Particles from '../ReactbitsComponent/Particles';
 
 function Footer() {
   return (
-    <div className="relative w-full min-h-[40vh] h-[40vh] sm:h-[60vh] md:h-[80vh] lg:h-[100vh] bg-gradient-to-r from-[#152125] to-[#111b20] overflow-hidden">
+    <div className="relative w-full min-h-[100vh] h-[100vh] sm:h-[100vh] md:h-[100vh] lg:h-[100vh] bg-gradient-to-r from-[#152125] to-[#111b20] overflow-hidden">
       <Particles
         particleColors={['#ffffff', '#ffffff']}
         particleCount={500}
