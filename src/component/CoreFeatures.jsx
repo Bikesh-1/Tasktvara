@@ -39,13 +39,13 @@ function CoreFeatures() {
   }, []);
 
   return (
-    <div className='w-screen h-auto bg-black relative z-20 p-4'>
+    <div className='relative z-20 p-4 w-screen h-auto bg-black md:h-[150vh] lg:h-[130vh]'>
       <div>
-        <h1 className='text-white sm:text-4xl p-10 text-xl'>Our Core Features</h1>
+        <h1 className='p-10 text-xl text-white sm:text-4xl'>Our Core Features</h1>
       </div>
-      <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-0">
+      <div className="flex flex-col gap-6 justify-center items-center md:flex-row md:gap-0">
         <div
-          className='w-80 h-72 sm:w-96 sm:h-80 rounded-2xl p-6 text-white shadow-xl relative flex flex-col justify-start items-center'
+          className='flex relative flex-col justify-start items-center p-6 w-80 h-72 text-white rounded-2xl shadow-xl sm:w-96 sm:h-80'
           style={{
             backgroundImage:
               "url('https://ik.imagekit.io/lxvqyrkjo/41474b18664e4742ed9a20e13e71413d58fadd70.png?updatedAt=1759954458682')",
@@ -58,7 +58,7 @@ function CoreFeatures() {
           <div className="flex flex-col items-center w-full">
             <p
               ref={titleRef}
-              className="text-xl md:text-2xl font-bold p-2 mb-1 text-white tracking-wide"
+              className="p-2 mb-1 text-xl font-bold tracking-wide text-white md:text-2xl"
               style={{
                 letterSpacing: "0.01em",
                 minHeight: "2.3em",
@@ -69,7 +69,7 @@ function CoreFeatures() {
             </p>
             <p
               ref={descRef}
-              className="text-sm md:text-lg p-2 text-center"
+              className="p-2 text-sm text-center md:text-lg"
               style={{
                 minHeight: 82,
                 transition: "opacity 0.35s"
@@ -77,7 +77,7 @@ function CoreFeatures() {
             >
               {FEATURES[current].description}
             </p>
-            <div className="flex items-center justify-center gap-3 mt-6">
+            <div className="flex gap-3 justify-center items-center mt-6">
               {FEATURES.map((ftr, idx) => (
                 <span
                   key={ftr.title}
@@ -94,16 +94,16 @@ function CoreFeatures() {
             </div>
           </div>
         </div>
-        <div className='w-full md:w-2/3 mt-8 md:mt-0'>
+        <div className='mt-8 w-full md:w-2/3 md:mt-0'>
           <MoveableCard />
         </div>
       </div>
       <div className="font-medium text-[#AEAEAE] text-2xl underline text-end p-6 xs:p-12 sm:p-16 md:p-24 w-full">
-        <a href="#" className="block w-full text-end text-lg xs:text-xl sm:text-2xl">
+        <a href="#" className="block w-full text-lg text-end xs:text-xl sm:text-2xl">
           Explore all Products
         </a>
       </div>
-      <div className="flex items-center justify-center flex-col gap-8 xs:gap-10 sm:gap-12 px-4 w-full">
+      <div className="flex flex-col gap-8 justify-center items-center px-4 w-full xs:gap-10 sm:gap-12">
         <h1 className="font-bold text-[#AEAEAE] text-lg xs:text-xl sm:text-2xl text-center">
           See Sales Agent in action
         </h1>

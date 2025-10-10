@@ -43,16 +43,16 @@ function SecondPage() {
 
   return (
     <div className="relative z-10 w-screen sm:h-[120vh] h-auto bg-black overflow-x-hidden text-white flex items-center justify-center flex-col">
-      <div className='relative z-20 w-full px-2 sm:px-6 md:px-0'>
+      <div className='relative z-20 px-2 w-full sm:px-6 md:p-10'>
         <TextReveal>
          Tvara builds private AI agents that automate workflows, boost productivity, and continuously learn to deliver smarter results.
         </TextReveal>
       </div>
-      <div className="flex flex-col md:flex-row justify-between items-center mt-8 w-full max-w-7xl px-2 sm:px-6 md:px-0 gap-4">
-        <h2 className="text-2xl md:text-3xl text-[#aeaeae] mb-4 md:mb-0">Recognized by</h2>
+      <div className="flex flex-col gap-4 justify-between items-center px-2 mt-8 w-full max-w-7xl md:flex-row sm:px-6 md:px-0">
+        <h2 className="text-2xl md:text-3xl text-[#aeaeae] mb-4 md:p-2">Recognized by</h2>
         <div className="flex relative justify-end w-full md:w-[68vw] max-w-full">
           <div
-            className="absolute top-0 left-0 z-10 w-20 sm:w-28 md:w-40 h-full pointer-events-none"
+            className="absolute top-0 left-0 z-10 w-20 h-full pointer-events-none sm:w-25 md:w-36"
             style={{
               background: "linear-gradient(to right, #000 80%, transparent 100%)"
             }}
@@ -60,7 +60,7 @@ function SecondPage() {
           <Logo />
 
           <div
-            className="absolute top-0 right-0 z-10 w-20 sm:w-28 md:w-40 h-full pointer-events-none"
+            className="absolute top-0 right-0 z-10 w-20 h-full pointer-events-none sm:w-28 md:w-40"
             style={{
               background: "linear-gradient(to left, #000 50%, transparent 100%)"
             }}
@@ -71,7 +71,7 @@ function SecondPage() {
 
       
       <div
-  className="relative w-[20rem] sm:w-[90rem] sm:h-[12rem] h-auto overflow-hidden rounded-2xl sm:mt-10 m-4 sm:m-0"
+  className="relative w-[20rem] sm:w-[90rem] sm:h-[12rem] h-auto overflow-hidden rounded-2xl sm:mt-10 m-4 sm:m-0 md:w-[90vw]"
   onMouseEnter={() => (hoverRef.current = true)}
   onMouseLeave={() => (hoverRef.current = false)}
 >
@@ -91,17 +91,17 @@ function SecondPage() {
             style={{ transitionProperty: "transform" }}
           />
         </div>
-        <div className="flex relative z-10 w-full h-full items-center gap-4 p-4 md:p-0 md:flex-row flex-col md:justify-start justify-center">
+        <div className="flex relative z-10 flex-col gap-4 justify-center items-center p-4 w-full h-full md:p-0 md:flex-row md:justify-start">
           <img
             className="md:w-[21rem] w-24 sm:w-28 object-contain rounded-xl sm:rounded-none"
             src={card.img}
             alt={card.title}
           />
-          <div className="flex flex-col gap-2 text-center md:text-left md:ml-10">
-            <h2 className="font-medium sm:font-bold text-sm sm:text-xl md:text-4xl text-white">
+          <div className="flex flex-col gap-2 text-center md:text-left">
+            <h2 className="text-xs font-medium text-white sm:text-base sm:font-semibold md:text-xl md:font-bold lg:text-3xl">
               {card.title}
             </h2>
-            <p className="text-[#d2d2d2] text-sm sm:text-base md:text-xl">
+            <p className="text-[#d2d2d2] text-sm sm:text-base md:text-lg lg:text-2xl ">
               {card.desc}
             </p>
             <a

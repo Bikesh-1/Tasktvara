@@ -5,25 +5,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 function BookDemo() {
-  const videoRef = useRef(null);
   const h1Ref = useRef(null);
   const pRef = useRef(null);
   const btnRef = useRef(null);
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    let videoPlayed = false;
-    let videoTrigger = ScrollTrigger.create({
-      trigger: sectionRef.current,
-      start: "top 80%",
-      onEnter: () => {
-        if (videoRef.current && !videoPlayed) {
-          videoRef.current.play().catch(() => {});
-          videoPlayed = true;
-        }
-      }
-    });
-
     gsap.fromTo(
       h1Ref.current,
       { y: 60, opacity: 0 },
@@ -70,7 +57,6 @@ function BookDemo() {
     );
 
     return () => {
-      videoTrigger && videoTrigger.kill();
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
@@ -83,15 +69,10 @@ function BookDemo() {
         minHeight: "100vh",
       }}
     >
-      <video
-        ref={videoRef}
+      <img
         className="object-cover absolute inset-0 z-0 w-full h-full"
-        src="https://www.pexels.com/download/video/7670836/"
-        autoPlay
-        loop
-        muted
-        playsInline
-        poster="https://images.pexels.com/videos/7670836/free-video-7670836.jpg"
+        src="https://ik.imagekit.io/lxvqyrkjo/97f7d49c94e94568fadaf5a853e612d8ea83afe1.png?updatedAt=1760118638962"
+        alt="Demo background"
       />
       <div className="absolute inset-0 z-10 bg-black/40" />
       <div className="flex relative z-20 flex-col justify-center items-center px-4 w-full sm:px-8">

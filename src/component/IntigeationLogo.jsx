@@ -27,7 +27,7 @@ function IntigeationLogo() {
   }, []);
 
   return (
-    <div className="relative z-20 w-screen bg-white h-[80vh] min-h-[80vh] sm:min-h-[100vh] lg:min-h-[120vh] flex flex-col">
+    <div className="relative z-20 w-screen bg-white h-[80vh] min-h-[80vh] sm:min-h-[100vh] md:min-h-[130vh] lg:min-h-[120vh] flex flex-col items-center justify-center gap-10">
       <div>
         <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl text-[#AEAEAE] font-bold p-4 sm:p-8 leading-tight">
           Tvara integrates seemlesly <br /> into your existing workflows
@@ -43,7 +43,7 @@ function IntigeationLogo() {
         />
       </div>
       <div className="flex justify-end items-end p-4 sm:p-8">
-        <p className="w-full sm:w-4/5 md:w-2/3 lg:w-1/2 text-base xs:text-lg sm:text-2xl md:text-2xl lg:text-2xl sm:text-end text-[#AEAEAE] leading-relaxed">
+        <p className="w-full sm:w-4/5 md:w-2/3 lg:w-1/2 text-base xs:text-lg sm:text-2xl md:text-xl lg:text-2xl sm:text-end text-[#AEAEAE] leading-relaxed">
           Get your RFP Agent up and running quickly by connecting it to your existing project management and communication tools like Asana, Slack, Microsoft Teams, and Google Workspace. This ensures efficient data management and enhances overall workflow
         </p>
       </div>
