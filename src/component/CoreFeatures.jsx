@@ -39,7 +39,7 @@ function CoreFeatures() {
   }, []);
 
   return (
-    <div className='relative z-20 p-4 w-screen h-auto bg-black md:h-[150vh] lg:h-[130vh]'>
+    <div className='relative z-20 p-4 w-screen h-[180vh] bg-black md:h-[150vh] lg:h-[130vh]'>
       <div>
         <h1 className='p-10 text-xl text-white sm:text-4xl'>Our Core Features</h1>
       </div>

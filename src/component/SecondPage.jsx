@@ -42,7 +42,7 @@ function SecondPage() {
   }, [cards.length]);
 
   return (
-    <div className="relative z-10 w-screen sm:h-[155vh] h-auto bg-black overflow-x-hidden text-white flex items-center justify-center flex-col gap-8">
+    <div className="relative z-10 w-screen sm:h-[155vh] h-[155vh] bg-black overflow-x-hidden text-white flex items-center justify-center flex-col gap-8">
       <div className='relative z-20 px-2 w-full sm:px-6 md:p-10'>
         <TextReveal>
          Tvara builds private AI agents that automate workflows, boost productivity, and continuously learn to deliver smarter results.

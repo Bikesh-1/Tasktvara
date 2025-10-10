@@ -2,7 +2,7 @@ import React from 'react'
 
 function Intigration() {
   return (
-    <div className="relative p-2 w-screen h-auto bg-white xs:p-4 sm:p-8 sm:h-[110vh]">
+    <div className="relative p-2 w-screen h-auto  bg-white xs:p-4 sm:p-8 sm:h-[110vh]">
       <div className="flex flex-col gap-8 justify-center items-start w-full h-full sm:gap-10">
         <div className="w-full">
           <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-[#AEAEAE] leading-tight ">
