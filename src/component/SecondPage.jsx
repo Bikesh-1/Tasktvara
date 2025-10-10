@@ -42,7 +42,7 @@ function SecondPage() {
   }, [cards.length]);
 
   return (
-    <div className="relative z-10 w-screen sm:h-[120vh] h-auto bg-black overflow-x-hidden text-white flex items-center justify-center flex-col">
+    <div className="relative z-10 w-screen sm:h-[150vh] h-auto bg-black overflow-x-hidden text-white flex items-center justify-center flex-col gap-8">
       <div className='relative z-20 px-2 w-full sm:px-6 md:p-10'>
         <TextReveal>
          Tvara builds private AI agents that automate workflows, boost productivity, and continuously learn to deliver smarter results.
@@ -50,7 +50,7 @@ function SecondPage() {
       </div>
       <div className="flex flex-col gap-4 justify-between items-center px-2 mt-8 w-full max-w-7xl md:flex-row sm:px-6 md:px-0">
         <h2 className="text-2xl md:text-3xl text-[#aeaeae] mb-4 md:p-2">Recognized by</h2>
-        <div className="flex relative justify-end w-full md:w-[68vw] max-w-full">
+        <div className="flex relative justify-end w-full md:w-[73vw] lg:w-[68vw] max-w-full">
           <div
             className="absolute top-0 left-0 z-10 w-20 h-full pointer-events-none sm:w-25 md:w-36"
             style={{
@@ -117,7 +117,7 @@ function SecondPage() {
   </div>
 </div>
 
-      <div className="flex absolute bottom-10 left-1/2 z-30 gap-2 -translate-x-1/2">
+      <div className="flex absolute bottom-9 left-1/2 z-30 gap-2 -translate-x-1/2">
         {cards.map((_, index) => (
           <div
             key={index}
