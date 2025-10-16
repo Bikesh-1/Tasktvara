@@ -8,7 +8,7 @@ import {
 
 function Faq() {
   return (
-    <div className="relative px-4 py-8 w-full min-h-screen bg-black sm:px-8">
+    <div className="relative px-4 py-8 w-full min-h-screen bg-black sm:px-8 lg:min-h-[90vh]">
       <div className="flex flex-col justify-center items-center w-full h-full">
         <div className="flex flex-col justify-center items-center w-full">
           <h1 className="text-3xl font-bold text-center text-white sm:text-5xl md:text-6xl">FAQ</h1>

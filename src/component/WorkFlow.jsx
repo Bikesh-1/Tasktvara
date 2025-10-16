@@ -3,7 +3,8 @@ import { ReactLenis, useLenis } from 'lenis/react'
 
 function WorkFlow() {
     return (
-        <div className="flex relative z-10 flex-col gap-8 justify-center items-center w-screen min-h-[140vh] bg-white">
+        <div className="flex relative z-10 flex-col gap-8 justify-center items-center w-screen bg-white
+  min-h-[140vh] sm:h-[140vh] lg:min-h-[120vh] xl:min-h-[110vh] 2xl:min-h-[100vh]">
             <ReactLenis root />
             <div className="flex flex-col-reverse gap-8 justify-between items-center px-2 w-full sm:w-[90vw] md:flex-row md:gap-8 md:px-8">
                 <div className="flex flex-col items-center w-full md:items-start md:w-2/3 lg:w-2/3">
